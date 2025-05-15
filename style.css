@@ -1,0 +1,278 @@
+/* Allgemeine Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+/* Navigation */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Hauptcontainer */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Spiel-Container */
+#spiel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Spiel */
+#spiel {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    transition: background-color 3s;
+}
+
+/* Tag/Nacht-Zyklen */
+#spiel.tag {
+    background-color: #f8f8f8;
+    border-color: #ccc;
+}
+
+#spiel.nacht {
+    background-color: #333;
+    border-color: #666;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+}
+
+#high-score {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+}
+
+#spiel.nacht #score,
+#spiel.nacht #high-score {
+    color: #ccc;
+}
+
+/* Game Over Anzeige */
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #555;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+#spiel.nacht #game-over {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ccc;
+}
+
+/* Dino Charakter */
+#dino {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-color: #555;
+    bottom: 0;
+    left: 50px;
+    border-radius: 3px;
+}
+
+#dino.ducking {
+    height: 30px;
+    width: 60px;
+}
+
+/* Boden */
+#boden {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    background-color: #333;
+}
+
+/* Hindernisse */
+.hindernis {
+    position: absolute;
+    background-color: #c55;
+    bottom: 0;
+}
+
+.kaktus {
+    width: 20px;
+    height: 50px;
+    border-radius: 3px;
+}
+
+.kaktus-gross {
+    width: 25px;
+    height: 70px;
+    border-radius: 3px;
+}
+
+.vogel {
+    width: 40px;
+    height: 20px;
+    bottom: 50px;
+    border-radius: 50% 50% 0 0;
+}
+
+/* Spielsteuerung */
+#spielsteuerung {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#start-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#start-button:hover {
+    background-color: #45a049;
+}
+
+/* Leaderboard */
+#leaderboard-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#leaderboard-table th, #leaderboard-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#leaderboard-table th {
+    background-color: #f2f2f2;
+}
+
+#leaderboard-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Modal für Username */
+.modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+#username-form {
+    margin-top: 20px;
+}
+
+#username-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#username-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
