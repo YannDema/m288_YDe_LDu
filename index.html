@@ -1,73 +1,84 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dino Run - Spiel</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DinoRun - Skate the Streets</title>
+    <link rel="stylesheet" href="css/game-styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Dino Run</div>
-            <ul>
-                <li><a href="#" class="active" id="spielen-link">Spielen</a></li>
-                <li><a href="#" id="leaderboard-link">Leaderboard</a></li>
-            </ul>
+    <header class="game-header">
+        <nav class="game-nav">
+            <h1 class="game-title">DINORUN</h1>
+            <div class="nav-links">
+                <a href="leaderboard.html" class="nav-link">Leaderboard</a>
+            </div>
         </nav>
+        <div class="score-display">
+            <span class="score-label">Score:</span>
+            <span id="current-score" class="score-value">0</span>
+        </div>
     </header>
 
-    <main>
-        <div id="spiel-container">
-            <div id="spiel">
-                <div id="score">0</div>
-                <div id="high-score">HI: 0</div>
-                <div id="game-over" style="display: none;">
-                    <h2>Game Over</h2>
-                    <p>Drücke Leertaste zum Neustarten</p>
-                </div>
-                <div id="dino"></div>
-                <div id="boden"></div>
-            </div>
-            <div id="spielsteuerung">
-                <p>Leertaste / Aufwärtspfeil = Springen</p>
-                <p>Abwärtspfeil = Ducken</p>
-                <button id="start-button">Starten</button>
+    <main class="game-container">
+        <canvas id="game-canvas" width="800" height="400"></canvas>
+        
+        <div id="start-screen" class="game-overlay">
+            <div class="start-content">
+                <h2 class="start-title">Ready to Skate?</h2>
+                <p class="start-instructions">Press SPACE to jump, DOWN to duck</p>
+                <button id="start-button" class="retro-button">Start Game</button>
             </div>
         </div>
 
-        <div id="leaderboard-container" style="display: none;">
-            <h2>Leaderboard</h2>
-            <table id="leaderboard-table">
-                <thead>
-                    <tr>
-                        <th>Rang</th>
-                        <th>Spieler</th>
-                        <th>Punkte</th>
-                    </tr>
-                </thead>
-                <tbody id="leaderboard-body">
-                    <!-- Hier werden die Highscores eingetragen -->
-                </tbody>
-            </table>
+        <div id="game-over-screen" class="game-overlay hidden">
+            <div class="game-over-content">
+                <h2 class="game-over-title">Game Over</h2>
+                <p class="final-score">Final Score: <span id="final-score-value">0</span></p>
+                <div class="game-over-buttons">
+                    <button id="restart-button" class="retro-button">Play Again</button>
+                    <button id="save-score-button" class="retro-button">Save Score</button>
+                    <button id="skip-save-button" class="retro-button secondary">Skip</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="score-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Save Your Score</h3>
+                    <button id="close-modal" class="close-button">&times;</button>
+                </div>
+                <form id="score-form" class="score-form">
+                    <div class="form-group">
+                        <label for="player-name" class="form-label">Player Name</label>
+                        <input 
+                            type="text" 
+                            id="player-name" 
+                            name="playerName" 
+                            class="form-input" 
+                            placeholder="Enter your name"
+                            maxlength="20"
+                            required
+                        >
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="retro-button">Save Score</button>
+                        <button type="button" id="cancel-save" class="retro-button secondary">Cancel</button>
+                    </div>
+                </form>
+                <div id="save-message" class="save-message hidden"></div>
+            </div>
         </div>
     </main>
 
-    <!-- Username-Modal -->
-    <div id="username-modal" class="modal">
-        <div class="modal-content">
-            <h2>Willkommen bei Dino Run!</h2>
-            <p>Bitte gib deinen Benutzernamen ein:</p>
-            <form id="username-form">
-                <input type="text" id="username-input" maxlength="15" required>
-                <button type="submit">Spielen</button>
-            </form>
+    <footer class="game-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 DinoRun - Skate the Streets</p>
+            <p class="footer-tagline">Born to be wild, built to be retro</p>
         </div>
-    </div>
+    </footer>
 
-    <script src="game.js"></script>
-    <script src="leaderboard.js"></script>
-    <script src="api-connector.js"></script>
+    <script type="module" src="js/game-main.js"></script>
 </body>
 </html>
