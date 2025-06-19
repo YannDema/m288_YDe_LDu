@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinoRun - Leaderboard</title>
+    <link rel="stylesheet" href="css/leaderboard-styles.css">
+</head>
+<body>
+    <header class="leaderboard-header">
+        <nav class="leaderboard-nav">
+            <h1 class="leaderboard-title">LEADERBOARD</h1>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Back to Game</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="leaderboard-container">
+        <section class="leaderboard-content">
+            <div class="leaderboard-header-section">
+                <h2 class="section-title">Top Skaters</h2>
+                <button id="refresh-leaderboard" class="retro-button">Refresh</button>
+            </div>
+
+            <div id="loading-indicator" class="loading-indicator">
+                <div class="loading-spinner"></div>
+                <p>Loading scores...</p>
+            </div>
+
+            <div id="leaderboard-table" class="leaderboard-table">
+                <div class="table-header">
+                    <div class="table-cell rank-cell">Rank</div>
+                    <div class="table-cell name-cell">Player</div>
+                    <div class="table-cell score-cell">Score</div>
+                    <div class="table-cell date-cell">Date</div>
+                </div>
+                <div id="leaderboard-rows" class="table-body">
+                    <!-- Leaderboard entries will be populated here -->
+                </div>
+            </div>
+
+            <div id="empty-leaderboard" class="empty-state hidden">
+                <div class="empty-icon">🏆</div>
+                <h3 class="empty-title">No Scores Yet</h3>
+                <p class="empty-message">Be the first to set a high score!</p>
+                <a href="index.html" class="retro-button">Play Now</a>
+            </div>
+
+            <div id="error-message" class="error-message hidden">
+                <div class="error-icon">⚠️</div>
+                <h3 class="error-title">Oops!</h3>
+                <p class="error-text">Failed to load leaderboard. Please try again.</p>
+                <button id="retry-load" class="retro-button">Retry</button>
+            </div>
+        </section>
+
+        <aside class="leaderboard-sidebar">
+            <div class="stats-card">
+                <h3 class="stats-title">Game Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Players:</span>
+                        <span id="total-players" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Highest Score:</span>
+                        <span id="highest-score" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Average Score:</span>
+                        <span id="average-score" class="stat-value">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-card">
+                <h3 class="tips-title">Pro Tips</h3>
+                <ul class="tips-list">
+                    <li>Time your jumps perfectly to clear bottles</li>
+                    <li>Duck under low obstacles to maintain speed</li>
+                    <li>Watch for speed increases as you progress</li>
+                    <li>Practice makes perfect - keep skating!</li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="leaderboard-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 DinoRun - Skate the Streets</p>
+            <p class="footer-tagline">Every legend starts with a single trick</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/leaderboard-main.js"></script>
+</body>
+</html>
