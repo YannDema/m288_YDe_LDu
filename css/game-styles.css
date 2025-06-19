@@ -8,7 +8,7 @@
 /* Custom Font Loading */
 @font-face {
     font-family: 'RetroPixel';
-    src: url('../assets/fonts/retro-font.woff2') format('woff2');
+    src: url('../assets/fonts/retro.font.otf') format('otf');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
