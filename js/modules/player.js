@@ -20,12 +20,12 @@ export class Player {
         this.height = 48;
 
         this.spriteMap = {
-            idle: 'assets\images\player\standing.png',
-            run: 'assets\images\player\running.png',
-            jump: 'assets\images\player\jumping.png',
-            crouch: 'assets\images\player\ducking.png',
-            crash: 'assets\images\player\falling.png',
-            down: 'assets\images\player\lying.png',
+            idle: '/assets/images/sprites/standing.png',
+            run: '/assets/images/sprites/running.png',
+            jump: '/assets/images/sprites/jumping.png',
+            crouch: '/assets/images/sprites/ducking.png',
+            crash: '/assets/images/sprites/falling.png',
+            down: '/assets/images/sprites/lying.png',
         };
 
         this.sprites = {};
@@ -47,7 +47,7 @@ export class Player {
         this.physics.applyGravity(this);
 
         // Bewegung aktualisieren (z. B. für Air-Resistance, falls aktiv)
-        this.physics.updatePosition(this);
+        this.physics.update(this);
     }
 
     jump() {
@@ -67,7 +67,7 @@ export class Player {
     }
 
     reset() {
-        this.physics.resetPhysics(this);
+        // this.physics.resetPhysics(this);
         this.state = 'idle';
     }
 

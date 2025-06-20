@@ -1,11 +1,11 @@
-export class Player {
+export class Physics {
     constructor(ctx, physics) {
         this.ctx = ctx;
         this.physics = physics;
 
         // Position und Bewegung
         this.x = 100;
-        this.y = physics.groundLevel;
+        // this.y = physics.groundLevel;
         this.velocityX = 0;
         this.velocityY = 0;
 
@@ -20,13 +20,17 @@ export class Player {
         this.height = 48;
 
         this.spriteMap = {
-            idle: 'assets/sprites/player/idle.png',
-            run: 'assets/sprites/player/run.png',
-            jump: 'assets/sprites/player/jump.png',
-            crouch: 'assets/sprites/player/crouch.png',
-            crash: 'assets/sprites/player/crash.png',
-            down: 'assets/sprites/player/down.png',
+ 
+
+                        idle: '/assets/images/sprites/standing.png',
+            run: '/assets/images/sprites/running.png',
+            jump: '/assets/images/sprites/jumping.png',
+            crouch: '/assets/images/sprites/ducking.png',
+            crash: '/assets/images/sprites/falling.png',
+            down: '/assets/images/sprites/lying.png',
         };
+  
+        
 
         this.sprites = {};
         this.loadSprites();
@@ -48,6 +52,7 @@ export class Player {
 
         // Bewegung aktualisieren (z. B. für Air-Resistance, falls aktiv)
         this.physics.updatePosition(this);
+        
     }
 
     jump() {

@@ -1,7 +1,7 @@
 // game-main.js
-import { GameEngine } from './modules/game-engine.js';
-import { UIManager } from './modules/ui-manager.js';
-import { Physics } from './modules/physics.js';
+import { GameEngine } from '/js/modules/game-engine.js';
+import { UIManager } from '/js/modules/ui-mamager.js';
+import { Physics } from '/js/modules/physics.js';
 
 // Wichtige DOM-Elemente
 const canvas = document.getElementById('game-canvas');

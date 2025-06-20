@@ -8,13 +8,13 @@ export class Obstacles {
 
         this.spriteMap = {
             hydrant: {
-                src: 'assets\images\obstacles\fire-hydrant.png',
+                src: 'assets/images/obstacles/fire-hydrant.png',
                 width: 40,
                 height: 60,
                 yOffset: 0
             },
             bottle: {
-                src: 'assets\images\obstacles\bottle.png',
+                src: 'assets/images/obstacles/bottle.png',
                 width: 32,
                 height: 32,
                 yOffset: 80 // schwebt über Boden
