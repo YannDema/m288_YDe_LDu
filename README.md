@@ -2,7 +2,9 @@
 BBK Punkte:
 1. Punkte werden abgespeichert
 2. Funktionierende Gravitation
-3. 
+3. Passendes Interface
+4. Passende Assets für Spieler, Hintergrund und Hindernisse
+5. Funktionierende Navigation Knöpfe
 
 Zuerst war unsere Idee, dass wir Tron programmieren, was dann aber kompliziert war, weil man ja entweder einen Computer oder einen zweiten Spieler braucht. Das fanden wir zu kompliziert und haben uns dann doch für ein Dino Run mässiges Spiel zu machen. Da wir beide gerne Skaten wollten wir dieses Hobby auch einbauen.
 
