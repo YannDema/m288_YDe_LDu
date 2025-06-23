@@ -47,7 +47,7 @@ export class Player {
         this.physics.applyGravity(this);
 
         // Bewegung aktualisieren (z. B. für Air-Resistance, falls aktiv)
-        this.physics.update(this);
+        this.physics.updatePosition(this);
     }
 
     jump() {
