@@ -1,6 +1,6 @@
 // game-main.js
 import { GameEngine } from '/js/modules/game-engine.js';
-import { UIManager } from '/js/modules/ui-mamager.js';
+import { UIManager } from '/js/modules/ui-manager.js';
 import { Physics } from '/js/modules/physics.js';
 
 // Wichtige DOM-Elemente
